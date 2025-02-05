@@ -1,5 +1,6 @@
 import { Link } from 'expo-router';
 import { openBrowserAsync } from 'expo-web-browser';
+import React from 'react';
 import { type ComponentProps } from 'react';
 import { Platform } from 'react-native';
 
@@ -10,6 +11,7 @@ export function ExternalLink({ href, ...rest }: Props) {
     <Link
       target="_blank"
       {...rest}
+      //@ts-ignore
       href={href}
       onPress={async (event) => {
         if (Platform.OS !== 'web') {
